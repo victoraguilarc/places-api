@@ -44,9 +44,9 @@ bcrypt = "^4.1.2"                   # https://github.com/pyca/bcrypt
 django-split-settings = "^1.2.0"    # https://django-split-settings.readthedocs.io/en/latest/
 
 # Timezones
-isodate = "^0.6.1"                  # https://github.com/gweis/isodate/tree/master/src/isodate
-pytz = "^2023.3"                    # https://pythonhosted.org/pytz/
-python-dateutil = "^2.8.2"          # https://github.com/dateutil/dateutil
+isodate = "^0.6.1"                                                # https://github.com/gweis/isodate/tree/master/src/isodate
+pytz = "^2023.3"                                                  # https://pythonhosted.org/pytz/
+python-dateutil = "^2.8.2"                                        # https://github.com/dateutil/dateutil
 
 # Deployment
 sentry-sdk = "^1.39.1"                                            # https://github.com/getsentry/sentry-python
@@ -89,17 +89,14 @@ django-coverage-plugin = "~3.1.0"     # https://github.com/nedbat/django_coverag
 safety = "^2.3.3"                     # https://pypi.org/project/safety/
 
 
-[tool.isort]
+[tool.isort]  # https://github.com/timothycrosley/isort/wiki/isort-Settings
 profile = "black"
-# isort configuration:
-# https://github.com/timothycrosley/isort/wiki/isort-Settings
 include_trailing_comma = true
 use_parentheses = true
 force_grid_wrap = 0
 known_django = "django"
 ensure_newline_before_comments = true
-# See https://github.com/timothycrosley/isort#multi-line-output-modes
-multi_line_output = 3
+multi_line_output = 3  # See https://github.com/timothycrosley/isort#multi-line-output-modes
 line_length = 99  # Should be: 120 - 1
 known_rest_framework = "rest_framework"
 known_first_party = [

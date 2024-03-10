@@ -22,9 +22,9 @@ DEBUG = False
 
 from socket import gethostbyname_ex, gethostname
 
-LOCAL_HOSTNAMES = [
-                      gethostname(),
-                  ] + list(set(gethostbyname_ex(gethostname())[2]))
+LOCAL_HOSTNAMES = [gethostname()]
+LOCAL_HOSTNAMES += list(set(gethostbyname_ex(gethostname())[2]))
+
 ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS') + LOCAL_HOSTNAMES
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 

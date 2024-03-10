@@ -53,6 +53,7 @@ sentry-sdk = "^1.39.1"                                            # https://gith
 gunicorn = "^21.2.0"                                              # https://github.com/benoitc/gunicorn
 django-tailwind = { extras = ["reload"], version = "^3.8.0" }
 loguru = "^0.7.2"
+django-storages = "^1.14.2"
 
 
 [tool.poetry.group.dev.dependencies]

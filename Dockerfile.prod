@@ -46,10 +46,6 @@ COPY compose/start-prod /start
 RUN sed -i 's/\r//' /start
 RUN chmod +x /start
 
-ENV CHAMBER_VERSION=2.12.0
-RUN curl -sSL https://github.com/segmentio/chamber/releases/download/v${CHAMBER_VERSION}/chamber-v${CHAMBER_VERSION}-linux-amd64 > chamber \
-    && chmod +x chamber
-
 COPY . /app
 
 CMD ["/start"]

@@ -33,7 +33,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     env_file:
-      - .env
+      - .env.prod
 
     depends_on:
       - postgres

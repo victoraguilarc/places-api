@@ -32,26 +32,26 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 #  S T A T I C / M E D I A  -  F I L E S
 # https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
 
-AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
-AWS_CLOUDFRONT_DOMAIN = env('AWS_CLOUDFRONT_DOMAIN')
-AWS_S3_FILE_OVERWRITE = False
-AWS_CACHE_EXPIRATION = 60 * 60 * 24  # 1 hours.
-AWS_S3_MAX_AGE_SECONDS_CACHED_STATIC = AWS_CACHE_EXPIRATION
-AWS_S3_BUCKET_AUTH = False
-AWS_S3_MAX_AGE_SECONDS = AWS_CACHE_EXPIRATION
-AWS_S3_GZIP = True
-
-AWS_S3_CUSTOM_DOMAIN = '{0}'.format(AWS_CLOUDFRONT_DOMAIN)
-STATIC_URL = 'https://{0}/static/'.format(AWS_CLOUDFRONT_DOMAIN)
-MEDIA_URL = 'https://{0}/media/'.format(AWS_CLOUDFRONT_DOMAIN)
-STORAGES = {
-    'default': {
-        'BACKEND': 'src.common.infrastructure.storage_backends.MediaStorage',
-    },
-    'staticfiles': {
-        'BACKEND': 'src.common.infrastructure.storage_backends.StaticStorage',
-    },
-}
+# AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
+# AWS_CLOUDFRONT_DOMAIN = env('AWS_CLOUDFRONT_DOMAIN')
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_CACHE_EXPIRATION = 60 * 60 * 24  # 1 hours.
+# AWS_S3_MAX_AGE_SECONDS_CACHED_STATIC = AWS_CACHE_EXPIRATION
+# AWS_S3_BUCKET_AUTH = False
+# AWS_S3_MAX_AGE_SECONDS = AWS_CACHE_EXPIRATION
+# AWS_S3_GZIP = True
+#
+# AWS_S3_CUSTOM_DOMAIN = '{0}'.format(AWS_CLOUDFRONT_DOMAIN)
+# STATIC_URL = 'https://{0}/static/'.format(AWS_CLOUDFRONT_DOMAIN)
+# MEDIA_URL = 'https://{0}/media/'.format(AWS_CLOUDFRONT_DOMAIN)
+# STORAGES = {
+#     'default': {
+#         'BACKEND': 'src.common.infrastructure.storage_backends.MediaStorage',
+#     },
+#     'staticfiles': {
+#         'BACKEND': 'src.common.infrastructure.storage_backends.StaticStorage',
+#     },
+# }
 
 #
 # TEMPLATE CONFIGURATION

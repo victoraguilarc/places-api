@@ -2,8 +2,6 @@
 
 from django.core import mail
 
-from rest_framework import status
-
 
 def mail_outbox():
     """It helps to test if any email message was sended."""

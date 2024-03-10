@@ -1,3 +1,4 @@
+# ruff: noqa: PLR0911, PLR2004, PLR0912, E721
 from dataclasses import dataclass
 from datetime import datetime
 
@@ -26,7 +27,7 @@ class RawTimeFormatter(TimeFormatter):
         )
         if type(date_time) is int:
             diff = local_now - datetime.fromtimestamp(date_time)
-        elif isinstance(date_time, datetime):
+        elif type(date_time) is datetime:
             diff = local_now - date_time
         else:
             diff = local_now - local_now

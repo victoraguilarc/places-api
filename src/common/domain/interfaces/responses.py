@@ -2,7 +2,7 @@
 
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import Dict, List, Union, Any
+from typing import Any, Dict, List, Union
 
 from src.common.domain.context.locale import LocaleContext
 

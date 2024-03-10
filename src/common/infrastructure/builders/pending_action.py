@@ -15,5 +15,4 @@ def build_pending_action(orm_instance: PendingActionORM) -> PendingAction:
         metadata=orm_instance.metadata,
         usage=orm_instance.usage,
         usage_limit=orm_instance.usage_limit,
-
     )

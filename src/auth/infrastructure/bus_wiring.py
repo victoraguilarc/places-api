@@ -1,8 +1,12 @@
-from src.auth.application.pending_actions.handlers.get_email_verification import GetEmailVerificationHandler
-from src.auth.application.pending_actions.handlers.get_phone_verification import GetPhoneNumberVerificationHandler
+from src.auth.application.pending_actions.handlers.get_email_verification import (
+    GetEmailVerificationHandler,
+)
+from src.auth.application.pending_actions.handlers.get_phone_verification import (
+    GetPhoneNumberVerificationHandler,
+)
 from src.common.application.queries.auth import (
-    GetPhoneVerificationQuery,
     GetEmailVerificationQuery,
+    GetPhoneVerificationQuery,
 )
 from src.common.infrastructure.context_builder import AppContextBuilder
 

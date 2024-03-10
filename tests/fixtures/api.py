@@ -2,8 +2,9 @@ from typing import Callable
 
 import pytest
 from pytest_django.lazy_django import skip_if_no_django
-from rest_framework.test import APIClient
 from rest_framework_simplejwt.tokens import RefreshToken, Token
+
+from rest_framework.test import APIClient
 
 from src.common.database.models import UserORM
 

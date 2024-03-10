@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from django.http import HttpResponse, JsonResponse
+
 # from django_grip import set_hold_stream
 from djangorestframework_camel_case.util import camelize
+
 from rest_framework import status
 
 from src.auth.application.pending_actions.use_cases.stream_finder import PendingActionStreamFinder

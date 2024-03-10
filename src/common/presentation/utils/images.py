@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 
-import tempfile
 from io import BytesIO
 from urllib.parse import urlparse
 
 from django.core import files
 
 import requests
+
+from src.common.constants import DEFAULT_REQUEST_TIMEOUT
 
 
 class DownloadedImage(object):
@@ -24,7 +25,7 @@ def clean_path_params(dirty_url: str):
 
 
 def download_image(image_url: str) -> DownloadedImage or None:
-    response = requests.get(image_url)
+    response = requests.get(image_url, timeout=DEFAULT_REQUEST_TIMEOUT)
 
     if response.status_code != requests.codes.ok:
         return

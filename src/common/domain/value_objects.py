@@ -2,7 +2,7 @@
 
 import tempfile
 from dataclasses import dataclass
-from typing import NewType, Union, Optional
+from typing import NewType, Optional, Union
 from uuid import UUID
 
 from src.common.domain.enums.locales import CountryIsoCode
@@ -46,7 +46,7 @@ class RawPhoneNumber:
 
 class Slug(str):
     def validate(self):
-        raise NotImplemented
+        raise NotImplementedError
 
 
 UserId = NewType('UserId', Union[UUID, str])

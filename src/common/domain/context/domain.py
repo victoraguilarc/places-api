@@ -2,11 +2,9 @@
 
 from dataclasses import dataclass
 
-from src.auth.domain.repositories import (
-    PendingActionRepository,
-    SessionRepository,
-    SessionUserRepository,
-)
+from src.auth.domain.repositories.pending_action import PendingActionRepository
+from src.auth.domain.repositories.session import SessionRepository
+from src.auth.domain.repositories.session_user import SessionUserRepository
 from src.places.domain.services.forecast import ForecastService
 from src.places.domain.services.place import PlaceService
 

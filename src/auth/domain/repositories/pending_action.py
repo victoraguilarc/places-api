@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from abc import ABC, abstractmethod
-from typing import Optional, List
+from typing import List, Optional
 
 from src.common.domain.entities.pending_action import PendingAction
 from src.common.domain.enums.users import PendingActionCategory, PendingActionStatus

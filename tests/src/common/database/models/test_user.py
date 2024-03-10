@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-from expects import be_true, equal, expect, be_a, be_empty
+from expects import be_a, be_empty, be_true, equal, expect
 
 from src.common.database.models import UserORM
 

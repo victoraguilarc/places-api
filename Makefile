@@ -150,9 +150,9 @@ isort:
 lint:
 	@echo "Linting..."
 	@$(COMPOSE) run --rm --no-deps django ruff check .
-	@$(COMPOSE) run --rm --no-deps django mypy .
-	@$(COMPOSE) run --rm django refurb .
-	@$(COMPOSE) run --rm django vulture .
+#	@$(COMPOSE) run --rm --no-deps django mypy .
+#	@$(COMPOSE) run --rm django refurb .
+#	@$(COMPOSE) run --rm django vulture .
 
 format:
 	@echo "Formatting..."

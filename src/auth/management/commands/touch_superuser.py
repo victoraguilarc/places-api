@@ -18,7 +18,7 @@ class Command(BaseCommand):
             defaults={
                 'is_superuser': True,
                 'is_staff': True,
-            }
+            },
         )
         if not created:
             return

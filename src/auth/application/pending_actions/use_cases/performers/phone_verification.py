@@ -2,7 +2,7 @@
 
 from dataclasses import dataclass
 
-from src.auth.domain.exceptions import InvalidPendingToken, CorruptedPendingAction
+from src.auth.domain.exceptions import CorruptedPendingAction, InvalidPendingToken
 from src.auth.domain.repositories.pending_action import PendingActionRepository
 from src.common.application.commands.users import PersistPhoneNumberCommand
 from src.common.domain.entities.pending_action import PendingAction

@@ -42,4 +42,3 @@ class LoginSessionBuilder(SessionBuilderMixin, Service):
         if not user:
             raise InvalidCredentials
         return user
-    

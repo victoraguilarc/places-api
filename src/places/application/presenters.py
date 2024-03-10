@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 from src.common.domain.context.locale import LocaleContext
 from src.common.domain.interfaces.responses import JSONPresenter
-from src.places.domain.entities.place import PlaceContainer, Place, DayForecast
+from src.places.domain.entities.place import DayForecast, Place, PlaceContainer
 
 
 @dataclass
@@ -51,5 +51,5 @@ class PlaceContainerPresenter(JSONPresenter):
             'forecasts': [
                 DayForecastPresenter(forecast, self.locale_context).to_dict
                 for forecast in self.instance.forecasts
-            ]
+            ],
         }

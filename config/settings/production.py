@@ -8,9 +8,11 @@ values are overridden.
 https://docs.djangoproject.com/en/2.2/howto/deployment/
 """
 import logging
+from socket import gethostbyname_ex, gethostname
+
+from django.core.exceptions import DisallowedHost
 
 import sentry_sdk
-from django.core.exceptions import DisallowedHost
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.logging import LoggingIntegration, ignore_logger
 from sentry_sdk.integrations.redis import RedisIntegration
@@ -19,8 +21,6 @@ from config.settings.components import env
 from config.settings.components.common import TEMPLATES
 
 DEBUG = False
-
-from socket import gethostbyname_ex, gethostname
 
 LOCAL_HOSTNAMES = [gethostname()]
 LOCAL_HOSTNAMES += list(set(gethostbyname_ex(gethostname())[2]))

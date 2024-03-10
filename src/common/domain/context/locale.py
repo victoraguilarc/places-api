@@ -13,4 +13,3 @@ class LocaleContext(object):
     language: Language
     locale_service: Optional[LocaleService] = None
     client: Optional[ConsumerClient] = None
-

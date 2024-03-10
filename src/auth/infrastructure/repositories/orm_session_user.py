@@ -3,11 +3,11 @@
 from typing import Optional
 
 from src.auth.domain.repositories.session_user import SessionUserRepository
-from src.common.database.models import PhoneNumberORM, UserORM, EmailAddressORM
+from src.common.database.models import EmailAddressORM, PhoneNumberORM, UserORM
 from src.common.domain.entities.email_address import EmailAddress
 from src.common.domain.entities.phone_number import PhoneNumber
 from src.common.domain.entities.user import User
-from src.common.domain.value_objects import UserId, RawPhoneNumber
+from src.common.domain.value_objects import RawPhoneNumber, UserId
 from src.common.infrastructure.builders.email_address import build_email_address
 from src.common.infrastructure.builders.user import build_user
 
@@ -59,10 +59,7 @@ class ORMSessionUserRepository(SessionUserRepository):
 
         return build_user(orm_instance)
 
-    def persist_email_address(
-        self,
-        email_address: EmailAddress
-    ) -> EmailAddress:
+    def persist_email_address(self, email_address: EmailAddress) -> EmailAddress:
         email_address_orm, _ = EmailAddressORM.objects.update_or_create(
             email=email_address.email,
             defaults=email_address.to_persist_dict,
@@ -99,7 +96,7 @@ class ORMSessionUserRepository(SessionUserRepository):
         return build_user(orm_instance)
 
     def persist(self, user: User) -> User:
-        orm_phone_number = self._persist_phone_number(user)
+        self._persist_phone_number(user)
         orm_instance, _ = UserORM.objects.update_or_create(
             uuid=user.id,
             defaults=user.to_persist_dict,
@@ -108,10 +105,7 @@ class ORMSessionUserRepository(SessionUserRepository):
 
     @classmethod
     def _persist_user(cls, user: User) -> UserORM:
-        if user.created_at:
-            filter_criteria = {'uuid': user.id}
-        else:
-            filter_criteria = {'email': user.email}
+        filter_criteria = {'uuid': user.id} if user.created_at else {'email': user.email}
         user_instance, _ = UserORM.objects.update_or_create(
             **filter_criteria, defaults={'email': user.email}
         )

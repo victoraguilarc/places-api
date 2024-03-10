@@ -57,4 +57,3 @@ class UUIDTimestampMixin(UUIDPrimaryKeyModelMixin, TimeStampedModelMixin):
 
     class Meta:
         abstract = True
-

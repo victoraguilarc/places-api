@@ -3,8 +3,8 @@
 from dataclasses import dataclass
 
 from src.auth.domain.exceptions import PendingActionNotFound
-from src.common.domain.entities.pending_action import PendingAction
 from src.auth.domain.repositories.pending_action import PendingActionRepository
+from src.common.domain.entities.pending_action import PendingAction
 from src.common.domain.interfaces.services import Service
 
 

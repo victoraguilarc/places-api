@@ -3,7 +3,6 @@ from typing import Optional
 
 
 class CacheStore(ABC):
-
     @abstractmethod
     def save(self, key: str, value: str):
         raise NotImplementedError

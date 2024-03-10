@@ -3,7 +3,7 @@
 import uuid
 from dataclasses import dataclass
 from datetime import datetime
-from typing import Optional, List
+from typing import List, Optional
 
 from src.common.domain.entities.email_address import EmailAddress
 from src.common.domain.entities.mixins.auth import DomainAuthMixin

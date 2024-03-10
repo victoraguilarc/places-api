@@ -2,11 +2,12 @@
 
 import io
 
-from PIL import Image
 from django.conf import settings
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
 from django.core.files.uploadedfile import SimpleUploadedFile
+
+from PIL import Image
 
 
 def generate_image(height=100, width=100, name='test.png'):
@@ -44,11 +45,7 @@ def clean_static_url(file_url: str) -> str:
         hostname=settings.BACKEND_HOSTNAME,
         file_url=file_url,
     )
-    return (
-        composed_file_url
-        if settings.DEBUG or settings.PROJECT_SERVE_STATIC
-        else file_url
-    )
+    return composed_file_url if settings.DEBUG or settings.PROJECT_SERVE_STATIC else file_url
 
 
 def get_hostname_slug(slug: str) -> str:

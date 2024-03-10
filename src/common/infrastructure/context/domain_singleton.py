@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
-from cachetools import TTLCache
 from django.conf import settings
 
-from src.auth.infrastructure.repositories import (
-    ORMPendingActionRepository,
-    ORMSessionRepository,
-    ORMSessionUserRepository,
-)
+from cachetools import TTLCache
+
+from src.auth.infrastructure.repositories.orm_pending_action import ORMPendingActionRepository
+from src.auth.infrastructure.repositories.orm_session import ORMSessionRepository
+from src.auth.infrastructure.repositories.orm_session_user import ORMSessionUserRepository
 from src.common.domain.context.domain import DomainContext
 from src.common.helpers.singlenton import SingletonMeta
 from src.common.infrastructure.mem_cache_store import MemCacheStore

@@ -17,18 +17,17 @@ class UserPresenter(object):
         return {
             'id': str(self.instance.id),
             'email_address': (
-                self.instance.email_address.to_minimal_dict
-                if self.instance.email_address else None
+                self.instance.email_address.to_minimal_dict if self.instance.email_address else None
             ),
             'phone_number': (
-                self.instance.phone_number.to_minimal_dict
-                if self.instance.phone_number else None
+                self.instance.phone_number.to_minimal_dict if self.instance.phone_number else None
             ),
             'created_at': (
                 TimeUtils.localize_isoformat(
                     date_time=self.instance.created_at,
                     time_zone=str(self.locale_context.time_zone),
                 )
-                if self.instance.created_at else None
+                if self.instance.created_at
+                else None
             ),
         }

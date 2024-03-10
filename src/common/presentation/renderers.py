@@ -40,7 +40,7 @@ class CamelizedFormattedJSONRenderer(CamelCaseJSONRenderer):
         renderer_context = renderer_context or {}
         response = renderer_context.get('response')
 
-        extra_data = dict()
+        extra_data = {}
 
         # For a paginated response
         if 'results' in data and isinstance(data['results'], list):

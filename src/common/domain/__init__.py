@@ -46,8 +46,8 @@ class BaseEnum(Enum):
     @classmethod
     def from_value(cls, value: Union[str, int]) -> Optional['BaseEnum']:
         for tag in cls:
-            if isinstance(tag.value, str) and str(tag.value).upper() == str(value).upper():
-                return tag
-            elif not isinstance(tag.value, str) and tag.value == value:
+            is_string = isinstance(tag.value, str)
+            has_same_value = str(tag.value).upper() == str(value).upper() or tag.value == value
+            if is_string and has_same_value:
                 return tag
         return None

@@ -6,6 +6,7 @@ import requests
 from loguru import logger
 
 from src.common.application.helpers.time import epoch_to_date
+from src.common.constants import DEFAULT_REQUEST_TIMEOUT
 from src.common.domain.interfaces.cache_store import CacheStore
 from src.places.domain.entities.place import DayForecast
 from src.places.domain.services.forecast import ForecastService
@@ -17,11 +18,14 @@ class HttpForecastService(ForecastService):
     api_key: str
 
     def get_forecasts(self, lat: float, lng: float) -> List[DayForecast]:
-        endpoint = f'{self.base_url}/onecall?lat={lat}&lon={lng}&exclude=current,minutely,hourly&appid={self.api_key}&lang=es'
+        fixed_params = 'exclude=current,minutely,hourly&units=metric&lang=es'
+        endpoint = (
+            f'{self.base_url}/onecall?lat={lat}&lon={lng}&{fixed_params}&appid={self.api_key}'
+        )
         headers = {
             'Content-Type': 'application/json',
         }
-        response = requests.get(endpoint, headers=headers)
+        response = requests.get(endpoint, headers=headers, timeout=DEFAULT_REQUEST_TIMEOUT)
         if response.status_code not in [200, 201]:
             raise Exception('Error getting forecasts')
         response_json = response.json()
@@ -43,16 +47,13 @@ class CachedHttpForecastService(HttpForecastService):
 
     def get_forecasts(self, lat: float, lng: float) -> List[DayForecast]:
         raw_lat, raw_lng = round(lat, 4), round(lng, 4)
-        cache_key = f'{raw_lng}|{raw_lng}'
+        cache_key = f'{raw_lat}|{raw_lng}'
 
         cached_value: str = self.cache_store.get(cache_key)
         if cached_value:
             logger.info(f'Hitting cache: {cache_key}')
             instances = json.loads(cached_value)
-            return [
-                DayForecast.from_dict(instance_dict)
-                for instance_dict in instances
-            ]
+            return [DayForecast.from_dict(instance_dict) for instance_dict in instances]
 
         forecasts = super().get_forecasts(lat=lat, lng=lng)
         self.cache_store.save(

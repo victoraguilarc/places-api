@@ -1,9 +1,10 @@
 from dataclasses import dataclass
 
 from src.auth.application.pending_actions.use_cases.generators.phone_number_verification import (
-    PhoneNumberVerificationGenerator
+    PhoneNumberVerificationGenerator,
 )
-from src.auth.domain.repositories import PendingActionRepository, SessionRepository
+from src.auth.domain.repositories.pending_action import PendingActionRepository
+from src.auth.domain.repositories.session import SessionRepository
 from src.common.application.queries.auth import GetPhoneVerificationQuery
 from src.common.domain.entities.pending_action import PendingActionContext
 from src.common.domain.messaging.queries import QueryHandler

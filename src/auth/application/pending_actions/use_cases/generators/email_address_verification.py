@@ -3,8 +3,8 @@
 from dataclasses import dataclass
 
 from src.auth.domain.interfaces.token_path_finder import CallbackData
-from src.auth.domain.repositories import SessionRepository
 from src.auth.domain.repositories.pending_action import PendingActionRepository
+from src.auth.domain.repositories.session import SessionRepository
 from src.common.domain.entities.email_address import EmailAddress
 from src.common.domain.entities.pending_action import PendingAction, PendingActionContext
 from src.common.domain.entities.user import User
@@ -27,7 +27,6 @@ class EmailVerificationGenerator(Service):
         self.action_repository.expire_past_similars(
             user_id=self.user.id,
             category=PendingActionCategory.VERIFY_EMAIL,
-
         )
         pending_action = self.action_repository.persist(
             pending_action=PendingAction.email_verification(

@@ -21,6 +21,7 @@ class AppContextBuilder(object):
         if environment.is_production or environment.is_development:
             from src.common.infrastructure.context.bus_singleton import BusSingleton
             from src.common.infrastructure.context.domain_singleton import DomainSingleton
+
             return AppContext(
                 domain=DomainSingleton.instance,
                 bus=BusSingleton.instance,

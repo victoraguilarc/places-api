@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib.auth.base_user import AbstractBaseUser
-from django.contrib.auth.models import UserManager, PermissionsMixin
+from django.contrib.auth.models import PermissionsMixin, UserManager
 from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+
 from imagekit.models import ProcessedImageField
 from pilkit.processors import ResizeToFill
 
@@ -19,9 +20,7 @@ class AbstractUser(AbstractBaseUser, PermissionsMixin):
         'username',
         max_length=150,
         unique=True,
-        help_text=_(
-            'Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.'
-        ),
+        help_text=_('Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.'),
         validators=[username_validator],
         error_messages={
             'unique': _('A user with that username already exists.'),
@@ -73,6 +72,9 @@ class AuthMixin(models.Model):
         default=None,
     )
 
+    class Meta:
+        abstract = True
+
     @property
     def email_verified(self) -> bool:
         return self.email_address.is_verified if self.email_address else False
@@ -88,9 +90,6 @@ class AuthMixin(models.Model):
     @property
     def display_email_address(self) -> str:
         return self.email_address.email if self.email_address else '---'
-
-    class Meta:
-        abstract = True
 
 
 def photos_folder(instance, filename):
@@ -134,6 +133,9 @@ class ProfileMixin(models.Model):
         default=str(DEFAULT_LANGUAGE),
     )
 
+    class Meta:
+        abstract = True
+
     @property
     def last_name(self) -> str:
         value = ''
@@ -155,6 +157,3 @@ class ProfileMixin(models.Model):
     @property
     def photo_url(self):
         return clean_static_url(self.photo.url) if self.photo else None
-
-    class Meta:
-        abstract = True

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from faker import Factory
-from faker.providers import credit_card, internet, lorem, misc, person, profile, phone_number
+from faker.providers import credit_card, internet, lorem, misc, person, phone_number, profile
 
 
 def instance_faker():

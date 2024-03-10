@@ -25,7 +25,9 @@ class PhoneNumberORM(UUIDTimestampMixin):
     )
     prefix = models.CharField(
         verbose_name='Prefix',
-        help_text='This is to solve numbers inconsistency, specially for Mexican and Brazilian numbers',
+        help_text=(
+            'This is to solve numbers inconsistency, ' 'specially for Mexican and Brazilian numbers'
+        ),
         max_length=2,
         blank=True,
         null=True,

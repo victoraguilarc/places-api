@@ -17,7 +17,7 @@ class AuthenticationMethod(BaseEnum):
     @property
     def is_sms(self) -> bool:
         return self == self.SMS
-    
+
 
 class PendingActionNamespace(BaseEnum):
     TENANTS = 'TENANTS'

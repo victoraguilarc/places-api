@@ -3,6 +3,7 @@
 from typing import Optional
 
 from django.utils import translation
+
 from rest_framework.generics import GenericAPIView
 from rest_framework.request import Request
 
@@ -10,7 +11,7 @@ from src.common.domain.context.bus import BusContext
 from src.common.domain.context.domain import DomainContext
 from src.common.domain.context.locale import LocaleContext
 from src.common.domain.entities.user import User
-from src.common.domain.enums.locales import CountryIsoCode, Language, TimeZone
+from src.common.domain.enums.locales import Language, TimeZone
 from src.common.helpers.requests import get_user_from_request
 from src.common.infrastructure.context_builder import AppContextBuilder
 from src.common.infrastructure.django_locales import DjangoLocaleService
@@ -64,8 +65,6 @@ class DomainAPIView(GenericAPIView):
         self,
         request: Request,
     ):
-        country_code = request.query_params.get('countryCode', str(CountryIsoCode.ANY))
-
         app_context = AppContextBuilder.from_env()
 
         self.domain_context = app_context.domain

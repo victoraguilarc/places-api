@@ -6,16 +6,18 @@ from django.utils.translation import gettext_lazy as _
 
 from src.auth.domain.exceptions import (
     InvalidCredentials,
+    InvalidCredentialsForTenant,
     InvalidPendingToken,
     PendingActionNotFound,
-    PictureNotFound, InvalidCredentialsForTenant,
+    PictureNotFound,
 )
 from src.common.domain.exceptions.common import (
+    DomainEmptyPage,
     DomainException,
     EmailIsAlreadyUsed,
-    UnAuthenticated, DomainEmptyPage,
+    UnAuthenticated,
 )
-from src.common.domain.exceptions.users import UserNotFound, NotEnoughTenantPermissions
+from src.common.domain.exceptions.users import NotEnoughTenantPermissions, UserNotFound
 from src.common.presentation.api.exceptions.base import (
     APIBadRequest,
     APIBaseException,
@@ -94,7 +96,6 @@ error_codes = {
         detail=_('the provided token is invalid'),
     ),
     UnAuthenticated: NOT_AUTHENTICATED,
-
     EmailIsAlreadyUsed: APIBadRequest(
         code='users.EmailIsAlreadyUsed',
         detail=_('This email is already being used'),

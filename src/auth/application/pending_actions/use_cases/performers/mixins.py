@@ -1,4 +1,7 @@
-from src.common.application.commands.users import PersistEmailAddressCommand, PersistPhoneNumberCommand
+from src.common.application.commands.users import (
+    PersistEmailAddressCommand,
+    PersistPhoneNumberCommand,
+)
 from src.common.domain.entities.email_address import EmailAddress
 from src.common.domain.entities.pending_action import PendingAction
 from src.common.domain.entities.phone_number import PhoneNumber

@@ -3,7 +3,7 @@ from datetime import date
 from decimal import Decimal
 
 import pytest
-from expects import expect, be_a, have_keys, equal
+from expects import be_a, equal, expect, have_keys
 
 from src.places.domain.entities.day_forecast import DayForecast
 
@@ -25,12 +25,14 @@ def test_to_dict(
 
     expect(result).to(be_a(dict))
     expect(result).to(
-        have_keys({
-            'day': '2024-06-01',
-            'max': '30',
-            'min': '20',
-            'weather': 'sunny',
-        })
+        have_keys(
+            {
+                'day': '2024-06-01',
+                'max': '30',
+                'min': '20',
+                'weather': 'sunny',
+            }
+        )
     )
 
 

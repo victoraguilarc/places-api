@@ -2,7 +2,6 @@ from abc import ABC, abstractmethod
 
 
 class FakerInterface(ABC):
-
     @abstractmethod
     def word(self) -> str:
         raise NotImplementedError

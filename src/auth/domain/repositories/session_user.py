@@ -6,7 +6,7 @@ from typing import Optional
 from src.common.domain.entities.email_address import EmailAddress
 from src.common.domain.entities.phone_number import PhoneNumber
 from src.common.domain.entities.user import User
-from src.common.domain.value_objects import UserId, RawPhoneNumber
+from src.common.domain.value_objects import RawPhoneNumber, UserId
 
 
 class SessionUserRepository(ABC):
@@ -37,10 +37,7 @@ class SessionUserRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def persist_email_address(
-        self,
-        email_address: EmailAddress
-    ) -> EmailAddress:
+    def persist_email_address(self, email_address: EmailAddress) -> EmailAddress:
         raise NotImplementedError
 
     @abstractmethod

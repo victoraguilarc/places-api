@@ -1,6 +1,5 @@
 from django.core.exceptions import DisallowedHost
 from django.http import JsonResponse
-from django.shortcuts import redirect
 
 
 class DeactivatedDisallowedHost:

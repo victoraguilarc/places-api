@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from typing import Optional, List
+from typing import List, Optional
 
 from src.auth.domain.repositories.pending_action import PendingActionRepository
 from src.common.database.models import PendingActionORM
@@ -30,7 +30,7 @@ class ORMPendingActionRepository(PendingActionRepository):
         category: Optional[PendingActionCategory] = None,
         status: Optional[PendingActionStatus] = None,
     ) -> Optional[PendingAction]:
-        filter_criteria = dict(token=token)
+        filter_criteria = {'token': token}
 
         if category:
             filter_criteria['category'] = str(category)
@@ -95,6 +95,5 @@ class ORMPendingActionRepository(PendingActionRepository):
 
     def clean_expired(self, user_id: UserId):
         PendingActionORM.objects.filter(
-            user_id=user_id,
-            status=str(PendingActionStatus.EXPIRED)
+            user_id=user_id, status=str(PendingActionStatus.EXPIRED)
         ).delete()

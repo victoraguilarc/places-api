@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
+# ruff: noqa: S324
 import hashlib
-import random
+import secrets
 import string
 import uuid
 
@@ -9,10 +10,10 @@ from django.conf import settings
 from src.common.presentation.utils.dates import ago, now
 
 
-def compute_md5_hash(string):
+def compute_md5_hash(input_value):
     """Gets md5 digest from a string."""
     md5_hash = hashlib.md5()  # noqa: S303, W291
-    md5_hash.update(string.encode('utf-8'))
+    md5_hash.update(input_value.encode('utf-8'))
     return md5_hash.hexdigest()
 
 
@@ -56,7 +57,7 @@ def get_hostname(request=None):
 
 def get_random_string(length=8):
     letters = string.ascii_lowercase
-    return ''.join(random.choice(letters) for i in range(length))
+    return ''.join(secrets.choice(letters) for i in range(length))
 
 
 def is_valid_uuid(value):

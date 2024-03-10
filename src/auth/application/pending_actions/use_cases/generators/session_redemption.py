@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from typing import Optional
 
 from src.auth.domain.interfaces.token_path_finder import CallbackData
-from src.auth.domain.repositories import PendingActionRepository
+from src.auth.domain.repositories.pending_action import PendingActionRepository
 from src.common.constants import DEFAULT_PENDING_ACTION_EXPIRATION_IN_MINUTES
 from src.common.domain.entities.pending_action import PendingAction, PendingActionContext
 from src.common.domain.entities.user import User

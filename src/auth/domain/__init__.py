@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
-from src.auth.domain.value_objects import SessionToken
 from src.common.domain.entities.user import User
+from src.common.domain.value_objects import SessionToken
 
 
 class SessionTokenBuilder(ABC):

@@ -13,11 +13,7 @@ class StandarJSONRenderer(CamelCaseJSONRenderer):
         if response.exception is False:
             if data is None:
                 data = {}
-            if (
-                isinstance(data, str)
-                or isinstance(data, list)
-                or data.get('pagination', None) is None
-            ):
+            if isinstance(data, str | list) or data.get('pagination', None) is None:
                 data = {'data': data, 'datetime': TimeUtils.utc_now()}
         return super().render(data, accepted_media_type, renderer_context)
 

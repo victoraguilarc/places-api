@@ -3,11 +3,18 @@
 from django.urls import path
 
 from src.auth.presentation.api.login import LoginView
-from src.auth.presentation.api.pending_actions.email_verification import PerformEmailVerificationView
+from src.auth.presentation.api.pending_actions.email_verification import (
+    PerformEmailVerificationView,
+)
 from src.auth.presentation.api.pending_actions.exchangers import ExchangePendingActionView
-from src.auth.presentation.api.pending_actions.phone_verification import PerformPhoneVerificationView
+from src.auth.presentation.api.pending_actions.phone_verification import (
+    PerformPhoneVerificationView,
+)
 from src.auth.presentation.api.register import RegisterView
-from src.auth.presentation.api.reset_password import ResetPasswordRequestView, ResetPasswordPerformView
+from src.auth.presentation.api.reset_password import (
+    ResetPasswordPerformView,
+    ResetPasswordRequestView,
+)
 from src.auth.presentation.streams.pending_action import PendingActionStream
 
 app_name = 'auth'

@@ -3,18 +3,17 @@
 from typing import Optional
 
 from src.auth.domain.repositories.session import SessionRepository
-from src.common.database.models import UserORM, EmailAddressORM, PhoneNumberORM
+from src.common.database.models import EmailAddressORM, PhoneNumberORM, UserORM
 from src.common.domain.entities.email_address import EmailAddress
 from src.common.domain.entities.phone_number import PhoneNumber
 from src.common.domain.entities.user import User
-from src.common.domain.value_objects import UserId, EmailAddressId, PhoneNumberId
+from src.common.domain.value_objects import EmailAddressId, PhoneNumberId, UserId
 from src.common.infrastructure.builders.email_address import build_email_address
 from src.common.infrastructure.builders.phone_number import build_phone_number
 from src.common.infrastructure.builders.user import build_user
 
 
 class ORMSessionRepository(SessionRepository):
-
     def find_by_email(
         self,
         email: str,
@@ -68,10 +67,8 @@ class ORMSessionRepository(SessionRepository):
     @classmethod
     def _find_by_email(cls, email: str) -> Optional[UserORM]:
         try:
-            return (
-                UserORM.objects
-                .select_related('phone_number', 'email_address')
-                .get(email_address__email=email)
+            return UserORM.objects.select_related('phone_number', 'email_address').get(
+                email_address__email=email
             )
         except UserORM.DoesNotExist:
             return None

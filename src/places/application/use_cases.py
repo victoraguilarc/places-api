@@ -1,12 +1,11 @@
-from concurrent.futures import ThreadPoolExecutor
-from concurrent.futures import wait
+from concurrent.futures import ThreadPoolExecutor, wait
 from dataclasses import dataclass
 from typing import List
 
 from loguru import logger
 
 from src.common.domain.interfaces.services import Service
-from src.places.domain.entities.place import PlaceContainer, Place
+from src.places.domain.entities.place import Place, PlaceContainer
 from src.places.domain.services.forecast import ForecastService
 from src.places.domain.services.place import PlaceService
 

@@ -72,7 +72,6 @@ class PhoneNumber(RawPhoneNumber):
 
     @classmethod
     def from_dict(cls, verified_data: dict) -> 'PhoneNumber':
-
         return cls(
             id=PhoneNumberId(verified_data.get('id', uuid.uuid4())),
             iso_code=verified_data['iso_code'],

@@ -8,7 +8,14 @@ from src.common.database.models import PendingActionORM
 @admin.register(PendingActionORM)
 class PendingActiondmin(admin.ModelAdmin):
     """Defines the pending action admin behaviour."""
-    search_fields = ('token', 'uuid', 'user__email', 'user__uuid', 'tracking_code',)
+
+    search_fields = (
+        'token',
+        'uuid',
+        'user__email',
+        'user__uuid',
+        'tracking_code',
+    )
     list_display = (
         'token',
         'user',
@@ -19,5 +26,8 @@ class PendingActiondmin(admin.ModelAdmin):
         'expires_at',
         'metadata',
     )
-    list_filter = ('category', 'status',)
+    list_filter = (
+        'category',
+        'status',
+    )
     raw_id_fields = ('user',)

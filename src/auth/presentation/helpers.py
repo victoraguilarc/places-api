@@ -4,10 +4,7 @@ from typing import Optional
 
 from config.settings.components.common import BACKEND_HOSTNAME
 from src.auth.domain.interfaces.token_path_finder import CallbackData
-from src.auth.infrastructure.builders.callback_url import (
-    DjangoCallbackData,
-    SimpleCallbackData,
-)
+from src.auth.infrastructure.builders.callback_url import DjangoCallbackData, SimpleCallbackData
 
 
 def get_token_path_builder(

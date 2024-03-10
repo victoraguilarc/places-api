@@ -6,7 +6,7 @@ from typing import Optional
 from src.common.domain.entities.email_address import EmailAddress
 from src.common.domain.entities.phone_number import PhoneNumber
 from src.common.domain.entities.user import User
-from src.common.domain.value_objects import UserId, EmailAddressId, PhoneNumberId
+from src.common.domain.value_objects import EmailAddressId, PhoneNumberId, UserId
 
 
 class SessionRepository(ABC):

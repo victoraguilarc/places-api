@@ -1,0 +1,22 @@
+[
+  {
+    "model": "database.emailaddressorm",
+    "pk": "016d72e3-379a-4774-a5fe-5112c60e74f5",
+    "fields": {
+      "created_at": "2024-01-30T20:59:35.224Z",
+      "updated_at": "2024-01-30T20:59:35.224Z",
+      "email": "vicobits@gmail.com",
+      "is_verified": false
+    }
+  },
+  {
+    "model": "database.emailaddressorm",
+    "pk": "2175a02b-bcf9-446f-bb1e-90d82a4a5bcf",
+    "fields": {
+      "created_at": "2024-01-30T20:40:17.520Z",
+      "updated_at": "2024-01-30T20:40:17.520Z",
+      "email": "admin@example.com",
+      "is_verified": true
+    }
+  }
+]

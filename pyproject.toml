@@ -1,0 +1,211 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "places-api"
+version = "0.0.1"
+description = "Api ti mix places with their weather forecast"
+authors = ["Victor Aguilar <vicobits@gmail.com>"]
+repository = "https://github.com/victoraguilarc/places-api"
+documentation = "https://github.com/victoraguilarc/places-api"
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = ">=3.10,<=3.12"
+django = "^5.0.1"
+# Config
+django-environ = "^0.11.2"   # https://github.com/joke2k/django-environ
+
+# Models
+psycopg2 = "^2.9.5"                           # https://github.com/psycopg/psycopg2
+dacite = "^1.8.1"                             # https://github.com/konradhalas/dacite
+Pillow = "^10.1.0"                            # https://github.com/python-pillow/Pillow
+django-imagekit = "^5.0.0"                    # https://github.com/matthewwithanm/
+shortuuid = "^1.0.11"
+
+# Caching
+redis = "^4.6.0"                              # https://github.com/antirez/redis
+django-redis = "^5.3.0"                       # https://github.com/niwinz/django-redis
+django-constance = "^3.1.0"                   # https://github.com/jazzband/django-constance
+
+# Rest API
+djangorestframework = "^3.14.0"             # https://github.com/encode/
+django-cors-headers = "^4.0.0"             # https://github.com/ottoyiu/
+djangorestframework-camel-case = "^1.4.2"   # https://github.com/vbabiy/djangorestframework-camel-case
+djangorestframework-simplejwt = "^5.3.1"    # https://github.com/davesque/django-rest-framework-simplejwt
+djangorestframework-api-key = "^3.0.0"      # https://florimondmanca.github.io/djangorestframework-api-key/
+
+# Utilities
+python-slugify = "^8.0.1"           # https://github.com/un33k/python-slugify
+pydantic = "^2.5.3"                 # https://github.com/pydantic/pydantic
+bcrypt = "^4.1.2"                   # https://github.com/pyca/bcrypt
+django-split-settings = "^1.2.0"    # https://django-split-settings.readthedocs.io/en/latest/
+
+# Timezones
+isodate = "^0.6.1"                  # https://github.com/gweis/isodate/tree/master/src/isodate
+pytz = "^2023.3"                    # https://pythonhosted.org/pytz/
+python-dateutil = "^2.8.2"          # https://github.com/dateutil/dateutil
+
+# Deployment
+sentry-sdk = "^1.39.1"                                            # https://github.com/getsentry/sentry-python
+gunicorn = "^21.2.0"                                              # https://github.com/benoitc/gunicorn
+django-tailwind = { extras = ["reload"], version = "^3.8.0" }
+loguru = "^0.7.2"
+
+
+[tool.poetry.group.dev.dependencies]
+# Debugging
+ipdb = "^0.13.9"                        # https://github.com/gotcha/ipdb
+ipython = "^8.19.0"                      # https://github.com/ipython/ipython
+django-debug-toolbar = "^4.0.0"         # https://github.com/jazzband/
+django-extensions = "^3.2.1"            # https://github.com/django-extensions/
+
+# Testing
+pytest = "^7.4.4"                 # https://github.com/pytest-dev/pytest
+pytest-django = "^4.5.2"          # https://github.com/pytest-dev/pytest-django
+pytest-mock = "^3.10.0"           # https://github.com/pytest-dev/pytest-mock
+pytest-sugar = "^0.9.6"           # https://github.com/Frozenball/pytest-sugar
+pytest-xdist = "^3.1.0"           # https://github.com/pytest-dev/pytest-xdist
+pytest-cov = "^4.0.0"             # https://github.com/pytest-dev/pytest-cov
+pytest-recording = "^0.13.1"      # https://github.com/kiwicom/pytest-recording
+
+# Mocking
+factory-boy = "^3.2.1"            # https://github.com/FactoryBoy/factory_boy
+faker = "^22.0.0"                 # https://github.com/joke2k/faker
+requests-mock = "^1.10.0"         # https://github.com/jamielennox/
+freezegun = "^1.2.2"              # https://github.com/spulec/freezegun
+expects = "^0.9.0"                #
+
+# Code Quality
+black = "~=23.12.1"
+ruff = ">=0.1.11"
+mypy = "^1.8.0"                       # https://github.com/python/mypy
+isort = "^5.13.2"                     # https://github.com/timothycrosley/isort
+coverage = "~7.4.0"                   # https://github.com/nedbat/coveragepy
+coverage-badge = "~1.1.0"             # https://github.com/dbrgn/coverage-badge
+django-coverage-plugin = "~3.1.0"     # https://github.com/nedbat/django_coverage_plugin
+safety = "^2.3.3"                     # https://pypi.org/project/safety/
+
+
+[tool.isort]
+profile = "black"
+# isort configuration:
+# https://github.com/timothycrosley/isort/wiki/isort-Settings
+include_trailing_comma = true
+use_parentheses = true
+force_grid_wrap = 0
+known_django = "django"
+ensure_newline_before_comments = true
+# See https://github.com/timothycrosley/isort#multi-line-output-modes
+multi_line_output = 3
+line_length = 99  # Should be: 120 - 1
+known_rest_framework = "rest_framework"
+known_first_party = [
+  "src.common",
+]
+indent = 4
+sections = [
+  "FUTURE", "STDLIB", "DJANGO", "THIRDPARTY", "REST_FRAMEWORK", "FIRSTPARTY", "LOCALFOLDER"
+]
+
+[tool.coverage.report]
+skip_empty = true
+
+[tool.coverage.run]
+branch = true
+source = ["src"]
+omit = [
+  "*migrations*",
+  "*templates*",
+  "tests/*",
+  "scripts/*",
+  "node_modules/*",
+]
+plugins = ["django_coverage_plugin"]
+
+
+[tool.coverage.html]
+directory = "reports/coverage"
+
+[tool.coverage.json]
+output = "coverage/coverage.json"
+
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"
+norecursedirs = "build dist _darcs {arch} *.egg node_modules */migrations/* */static/* docs *.egg-info .git __pycache__"
+# -s >> no capture warnings
+addopts = "--tb=short --maxfail=100 --strict -s"
+testpaths = "tests"
+python_files = "tests.py test_*.py"
+python_classes = "*Tests"
+python_functions = "test_*"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+console_output_style = "progress"
+filterwarnings = [
+  "ignore::DeprecationWarning",
+  "ignore::PendingDeprecationWarning"
+]
+markers = [
+  "flake8: Run flake8 on all possible template combinations",
+  "black: Run black on all possible template combinations",
+  "single: Run single test to debug it",
+]
+
+
+[tool.black]
+line-length = 100
+skip-string-normalization = true
+exclude = "/(.git|.tox|migrations|libs|docs|data)/"
+target-versions = "py311"
+
+[tool.ruff]
+select = ["E", "F", "B", "S", "A", "C40", "DJ", "PIE", "T20", "SIM", "PLR"]
+ignore = ["S101", "A003", "S105", "SIM105", "A002", "B904", "PLR0913"]
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["E", "F", "C4", "PIE", "RET", "SIM", "PLR"]
+unfixable = ["B"]
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+  ".bzr",
+  ".direnv",
+  ".eggs",
+  ".git",
+  ".hg",
+  ".mypy_cache",
+  ".nox",
+  ".pants.d",
+  ".pytype",
+  ".ruff_cache",
+  ".svn",
+  ".tox",
+  ".venv",
+  "__pypackages__",
+  "_build",
+  "buck-out",
+  "build",
+  "dist",
+  "node_modules",
+  "venv",
+  "migrations",
+  "libs",
+  "docs",
+  "data",
+  "test_*.py"
+]
+
+# Same as Black.
+line-length = 100
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Assume Python 3.11.
+target-version = "py311"
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["E402"]

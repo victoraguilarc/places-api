@@ -1,0 +1,44 @@
+version: '3.8'
+
+volumes:
+  postgres_data:
+
+
+services:
+  redis:
+    image: redis:6-alpine
+
+  postgres:
+    image: postgres:15
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  mailhog:
+    image: mailhog/mailhog:v1.0.0
+    logging:
+      driver: none
+    ports:
+      - "8025:8025"
+
+  django:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: development
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - mailhog
+      - redis
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    command: /start
+
+

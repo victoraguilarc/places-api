@@ -1,0 +1,303 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-09 22:27+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: config/settings/components/common.py:102
+msgid "Spanish"
+msgstr ""
+
+#: config/settings/components/common.py:103
+msgid "English"
+msgstr ""
+
+#: src/auth/presentation/forms.py:22
+#: tests/src/auth/presentation/forms/test_reset_password.py:20
+msgid "Passwords Mismatch"
+msgstr ""
+
+#: src/common/database/admin/user.py:23
+msgid "Email"
+msgstr ""
+
+#: src/common/database/admin/user.py:61
+msgid "Personal Information"
+msgstr ""
+
+#: src/common/database/admin/user.py:70
+msgid "Permissions"
+msgstr ""
+
+#: src/common/database/admin/user.py:112
+msgid "Phone Number"
+msgstr ""
+
+#: src/common/database/models/mixins/users.py:23
+msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+msgstr ""
+
+#: src/common/database/models/mixins/users.py:27
+msgid "A user with that username already exists."
+msgstr ""
+
+#: src/common/database/models/mixins/users.py:31
+msgid "staff status"
+msgstr ""
+
+#: src/common/database/models/mixins/users.py:33
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+#: src/common/database/models/mixins/users.py:36
+msgid "active"
+msgstr ""
+
+#: src/common/database/models/mixins/users.py:39
+msgid ""
+"Designates whether this user should be treated as active.Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+#: src/common/infrastructure/django_locales.py:12
+msgid "Monday"
+msgstr ""
+
+#: src/common/infrastructure/django_locales.py:13
+msgid "Tuesday"
+msgstr ""
+
+#: src/common/infrastructure/django_locales.py:14
+msgid "Wednesday"
+msgstr ""
+
+#: src/common/infrastructure/django_locales.py:15
+msgid "Thursday"
+msgstr ""
+
+#: src/common/infrastructure/django_locales.py:16
+msgid "Friday"
+msgstr ""
+
+#: src/common/infrastructure/django_locales.py:17
+msgid "Saturday"
+msgstr ""
+
+#: src/common/infrastructure/django_locales.py:18
+msgid "Sunday"
+msgstr ""
+
+#: src/common/infrastructure/django_locales.py:19
+msgid "Administrator"
+msgstr ""
+
+#: src/common/infrastructure/django_locales.py:20
+msgid "Payment Reminder"
+msgstr ""
+
+#: src/common/presentation/api/exceptions/base.py:31
+#: src/common/presentation/api/exceptions/collection.py:32
+#: web/templates/errors/500.html:4
+msgid "Server Error"
+msgstr ""
+
+#: src/common/presentation/api/exceptions/base.py:39
+msgid "Invalid input."
+msgstr ""
+
+#: src/common/presentation/api/exceptions/base.py:47
+msgid "Incorrect authentication credentials."
+msgstr ""
+
+#: src/common/presentation/api/exceptions/base.py:55
+#: src/common/presentation/api/exceptions/collection.py:37
+msgid "Authentication credentials were not provided."
+msgstr ""
+
+#: src/common/presentation/api/exceptions/base.py:63
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: src/common/presentation/api/exceptions/base.py:71
+msgid "Not found."
+msgstr ""
+
+#: src/common/presentation/api/exceptions/base.py:79
+msgid "Method Not Allowed."
+msgstr ""
+
+#: src/common/presentation/api/exceptions/base.py:87
+msgid "Tenant not implemented."
+msgstr ""
+
+#: src/common/presentation/api/exceptions/collection.py:41
+msgid "Invalid or Expired token"
+msgstr ""
+
+#: src/common/presentation/api/exceptions/collection.py:45
+msgid "Authentication Fails"
+msgstr ""
+
+#: src/common/presentation/api/exceptions/collection.py:49
+msgid "Tenant Not Found"
+msgstr ""
+
+#: src/common/presentation/api/exceptions/collection.py:53
+msgid "Tenant User Not Found"
+msgstr ""
+
+#: src/common/presentation/api/exceptions/collection.py:57
+msgid "Tenant Customer Not Found"
+msgstr ""
+
+#: src/common/presentation/api/exceptions/collection.py:61
+msgid "User Not Found"
+msgstr ""
+
+#: src/common/presentation/api/exceptions/collection.py:65
+msgid "Tenant Access Unauthorized"
+msgstr ""
+
+#: src/common/presentation/api/exceptions/collection.py:69
+msgid "Has no enough permissions to perform this action"
+msgstr ""
+
+#: src/common/presentation/api/exceptions/collection.py:73
+msgid "There are no more items"
+msgstr ""
+
+#: src/common/presentation/api/exceptions/collection.py:82
+msgid "Invalid Credentials"
+msgstr ""
+
+#: src/common/presentation/api/exceptions/collection.py:86
+msgid "Invalid Credentials for Tenant"
+msgstr ""
+
+#: src/common/presentation/api/exceptions/collection.py:90
+msgid "Picture Not Found"
+msgstr ""
+
+#: src/common/presentation/api/exceptions/collection.py:94
+msgid "the provided token is invalid"
+msgstr ""
+
+#: src/common/presentation/api/exceptions/collection.py:100
+msgid "This email is already being used"
+msgstr ""
+
+#: src/common/presentation/api/exceptions/collection.py:104
+msgid "Pending Action not found"
+msgstr ""
+
+#: src/common/presentation/api/exceptions/handler.py:62
+msgid "There are validation errors in the request"
+msgstr ""
+
+#: src/common/presentation/api/rest_fields.py:83
+msgid "Invalid type. This is not an base64 string: {}"
+msgstr ""
+
+#: src/common/presentation/api/rest_fields.py:117
+msgid "Please upload a valid image."
+msgstr ""
+
+#: src/common/presentation/api/rest_fields.py:118
+msgid "The type of the image couldn't be determined."
+msgstr ""
+
+#: src/common/presentation/api/rest_fields.py:169
+msgid "Please upload a valid file."
+msgstr ""
+
+#: src/common/presentation/api/rest_fields.py:170
+msgid "The type of the file couldn't be determined."
+msgstr ""
+
+#: tests/src/auth/presentation/forms/test_reset_password.py:27
+#: tests/src/auth/presentation/forms/test_reset_password.py:28
+msgid "This field is required."
+msgstr ""
+
+#: web/templates/admin/dropdown_filter.html:3
+#, python-format
+msgid " By %(filter_title)s "
+msgstr ""
+
+#: web/templates/errors/400.html:4
+msgid "Bad Request"
+msgstr ""
+
+#: web/templates/errors/400.html:5
+msgid "Bad Request!"
+msgstr ""
+
+#: web/templates/errors/400.html:8
+msgid ""
+"\n"
+"  The request noesn't have the minimum required to run this action.\n"
+"  "
+msgstr ""
+
+#: web/templates/errors/403.html:4
+msgid "Access Denied"
+msgstr ""
+
+#: web/templates/errors/403.html:5
+msgid "Access Denied!"
+msgstr ""
+
+#: web/templates/errors/403.html:8
+msgid ""
+"\n"
+"  You don't have enogh permissions to get this page, please, contact us at.\n"
+"  "
+msgstr ""
+
+#: web/templates/errors/404.html:4
+msgid "Not Found"
+msgstr ""
+
+#: web/templates/errors/404.html:5
+msgid "Not Found!"
+msgstr ""
+
+#: web/templates/errors/404.html:8
+msgid ""
+"\n"
+"  Page not found, this resource don't exist or its under construction.\n"
+"  "
+msgstr ""
+
+#: web/templates/errors/500.html:5
+msgid "Intternal Server Error!"
+msgstr ""
+
+#: web/templates/errors/500.html:9
+msgid ""
+"\n"
+"  It's occurred an error in the server, please contact us to get more "
+"information at\n"
+"  "
+msgstr ""
+
+#: web/templates/errors/_base.html:20
+msgid "Back to Home"
+msgstr ""
+
+#: web/templates/errors/_base.html:23
+msgid "Contact support"
+msgstr ""

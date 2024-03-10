@@ -1,0 +1,71 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+
+# OSX Finder turds
+.DS_Store
+
+# dev DB
+# *.db
+
+# Boxes
+*.box
+*.log
+
+# Distribution / packaging
+.idea/
+.sass-cache/
+.vagrant/
+.devcontainer
+
+version.properties
+.sass-cache
+.project
+
+# Folders
+public/
+extras/
+env/
+var/
+node_modules/
+keys/
+tmp/
+data/
+fixtures/samples
+
+package-lock.json
+
+
+# Cache Folders
+.pytest_cache/
+.mypy_cache/
+.vscode/
+coverage/
+.coverage
+.cache
+.docker-sync/
+
+# exclude everything
+reports/flake8/*
+
+
+# Config files
+.env
+.env.prod
+ # required to test production images only
+.aws_credentials
+config/settings/local.py
+.retry
+
+# emacs
+*~
+\#*\#
+*.\#*
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+secrets.json
+env.json
+prod.json
+ngrok

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+/app/chamber exec "${STACK_NAME}" -- python /app/manage.py collectstatic  \
+  --no-input  \
+  -i django_extensions \
+  -i '*.coffee' \
+  -i '*.rb' \
+  -i '*.scss' \
+  -i '*.less' \
+  -i '*.sass'
+/app/chamber exec "${STACK_NAME}" -- python /app/manage.py migrate --no-input
+/app/chamber exec "${STACK_NAME}" -- python /app/manage.py touch_superuser
+
+/app/chamber exec "${STACK_NAME}" -- ddtrace-run /usr/local/bin/gunicorn -c gunicorn.ini config.wsgi

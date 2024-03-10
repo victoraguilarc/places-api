@@ -1,0 +1,30 @@
+repos:
+- repo: local
+  hooks:
+  - id: make-isort
+    name: Sorting and cleaning imports
+    entry: make isort
+    language: system
+    stages: [ push ]
+#  - id: make-typing
+#    name: Checking typing
+#    entry: make typing
+#    language: system
+#  - id: make-vulture
+#    name: Checking dead code
+#    entry: make vulture
+#    language: system
+#  - id: make-refurb
+#    name: Looking for bad practices
+#    entry: make refurb
+#    language: system
+#  - id: make-lint
+#    name: Linting code
+#    entry: make lint
+#    language: system
+  - id: make-test
+    name: Running tests
+    entry: ls
+    language: system
+    stages: [ push ]
+

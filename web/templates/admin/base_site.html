@@ -1,0 +1,12 @@
+{% extends "admin/base_site.html" %}
+
+{% load static %}
+
+{% block extrahead %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/icons/favicon.png' %}" >
+{% endblock %}
+
+{% block branding %}
+  <img src="{% static 'images/icons/favicon.png' %}" alt="logo">
+  {{ block.super }}
+{% endblock %}

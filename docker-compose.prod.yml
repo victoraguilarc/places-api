@@ -1,0 +1,45 @@
+version: '3.8'
+
+volumes:
+  postgres_data:
+
+services:
+  redis:
+    image: redis:6-alpine
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432"
+
+  django:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.prod
+      target: production
+    container_name: places-api-prod
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    env_file:
+      - .env
+
+    depends_on:
+      - postgres
+      - redis
+    ports:
+      - "8000:8000"
+    command: /start
+
+

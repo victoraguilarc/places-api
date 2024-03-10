@@ -1,0 +1,21 @@
+[
+  {
+    "model": "database.userorm",
+    "pk": "00000000-0000-0000-0000-000000000001",
+    "fields": {
+      "password": "bcrypt_sha256$$2b$12$7PciGHrtxZ8BSZF5xfWXYOb4dcaikEC6hFnencdQLpZYMfrfa6tze",
+      "last_login": "2024-01-30T20:32:44.382Z",
+      "is_superuser": true,
+      "created_at": "2020-01-15T16:56:28.873Z",
+      "updated_at": "2024-01-30T20:59:34.801Z",
+      "username": "admin",
+      "is_staff": true,
+      "is_active": true,
+      "email_address": "2175a02b-bcf9-446f-bb1e-90d82a4a5bcf",
+      "phone_number": "105c9337-09f6-4eb9-b244-d0495422c3f1",
+      "current_tenant": "fc119fa0-c085-46c4-85de-400ac8883bf5",
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]

@@ -98,7 +98,7 @@ SECURE_SSL_REDIRECT = False
 
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-CSRF_TRUSTED_ORIGINS = ['*']  # Change this to your domain
+CSRF_TRUSTED_ORIGINS = ['https://places.codemia.dev']  # Change this to your domain
 
 EMAIL_SUBJECT_PREFIX = env(
     'DJANGO_EMAIL_SUBJECT_PREFIX',

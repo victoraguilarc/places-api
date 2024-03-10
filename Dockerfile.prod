@@ -35,15 +35,7 @@ COPY compose/post-build /post-build
 RUN sed -i 's/\r//' /post-build
 RUN chmod +x /post-build
 
-#  W O R K E R S
-
-COPY compose/start-worker /worker
-RUN sed -i 's/\r//' /worker
-RUN chmod +x /worker
-
-
 EXPOSE 8000
-
 
 #
 #  P R O D U C T I O N

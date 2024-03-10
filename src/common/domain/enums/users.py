@@ -23,28 +23,10 @@ class PendingActionStatus(BaseEnum):
     EXPIRED = 'EXPIRED'
 
 
-class Gender(BaseEnum):
-    MALE = 'MALE'
-    FEMALE = 'FEMALE'
-    OTHER = 'OTHER'
-
-
-class TenantCustomerStatus(BaseEnum):
-    CREATED = 'CREATED'
-    ACTIVE = 'ACTIVE'
-    INACTIVE = 'INACTIVE'
-    CANCELLED = 'CANCELLED'
-
-
-class TenantUserStatus(BaseEnum):
-    PENDING = 'PENDING'
-    ACTIVE = 'ACTIVE'
-    INACTIVE = 'INACTIVE'
-
-
 class VerificationType(BaseEnum):
     EMAIL = 'EMAIL'
     PHONE_NUMBER = 'PHONE_NUMBER'
+    WHATSAPP = 'WHATSAPP'
 
     @property
     def is_email(self):

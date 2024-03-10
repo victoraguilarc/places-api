@@ -3,6 +3,7 @@
 from dataclasses import dataclass
 
 from src.common.domain.context.locale import LocaleContext
+from src.common.domain.enums.common import GenericActionStatus
 from src.common.domain.interfaces.responses import ApiResponse
 from src.common.helpers.time import TimeUtils
 

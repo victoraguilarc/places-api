@@ -52,6 +52,7 @@ class Slug(str):
 UserId = NewType('UserId', Union[UUID, str])
 EmailAddressId = NewType('EmailAddressId', Union[UUID, str])
 PhoneNumberId = NewType('PhoneNumberId', Union[UUID, int])
+SessionToken = NewType('SessionToken', dict)
 
 
 class TenantSlug(Slug):

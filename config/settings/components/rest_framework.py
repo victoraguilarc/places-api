@@ -5,7 +5,6 @@ from datetime import timedelta
 from corsheaders.defaults import default_headers
 
 from config.settings.components import env
-from src.common.constants import DEFAULT_PAGINATION_PAGE_SIZE
 
 CORS_ORIGIN_ALLOW_ALL = True
 REST_FRAMEWORK = {
@@ -31,7 +30,6 @@ REST_FRAMEWORK = {
         'src.common.presentation.renderers.CamelizedFormattedJSONRenderer',
         'rest_framework.renderers.MultiPartRenderer',
     ),
-    'PAGE_SIZE': DEFAULT_PAGINATION_PAGE_SIZE,
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',
     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
     'DATETIME_FORMAT': '%Y-%m-%d %H:%M:%SZ',  # noqa: WPS323

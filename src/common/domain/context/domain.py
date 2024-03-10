@@ -7,7 +7,8 @@ from src.auth.domain.repositories import (
     SessionRepository,
     SessionUserRepository,
 )
-from src.places.domain.services import PlaceService, ForecastService
+from src.places.domain.services.forecast import ForecastService
+from src.places.domain.services.place import PlaceService
 
 
 @dataclass

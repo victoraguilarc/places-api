@@ -6,7 +6,7 @@ from typing import List
 from src.common.domain.context.locale import LocaleContext
 from src.common.domain.interfaces.responses import ApiResponse
 from src.places.application.presenters import PlaceContainerPresenter
-from src.places.domain.aggregates import PlaceContainer
+from src.places.domain.entities.place import PlaceContainer
 
 
 @dataclass

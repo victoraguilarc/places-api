@@ -8,8 +8,6 @@ from src.common.domain.entities.user import User
 from src.common.domain.messaging.commands import Command
 
 
-
-
 @dataclass
 class RegisterUserCommand(Command):
     instance: User

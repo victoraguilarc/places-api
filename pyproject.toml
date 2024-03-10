@@ -54,6 +54,7 @@ gunicorn = "^21.2.0"                                              # https://gith
 django-tailwind = { extras = ["reload"], version = "^3.8.0" }
 loguru = "^0.7.2"
 django-storages = "^1.14.2"
+cachetools = "^5.3.3"
 
 
 [tool.poetry.group.dev.dependencies]

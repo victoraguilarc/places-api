@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 from src.common.domain.context.locale import LocaleContext
 from src.common.domain.interfaces.responses import JSONPresenter
-from src.places.domain.aggregates import PlaceContainer, Place, DayForecast
+from src.places.domain.entities.place import PlaceContainer, Place, DayForecast
 
 
 @dataclass

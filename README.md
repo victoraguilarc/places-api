@@ -55,9 +55,9 @@ You need to have installed `git`, `docker`, `ssh` and a decent `terminal`.
 * `make locales` harverst translate string and generate .po files.
 * `make compile_locales` compile translation strings.
 
-### Code Quality
+### Code quality hooks
 
-Firstly we need to configure pre-commit hooks, we need to do this just one time.
+To configure pre-commit hooks, we need to do this just one time.
 
 * `brew install pre-commit` installs pre-commit
 * `pre-commit install` install hooks in the current repo.

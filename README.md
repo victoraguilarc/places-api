@@ -28,8 +28,9 @@ You need to have installed `git`, `docker`, `ssh` and a decent `terminal`.
 
 1. `make build` build the images for development.
 2. `make fixtures` load initial data (optional).
-3. `make up` start development server.
-4. Open `localhost:8000` in your browser.
+3. Copy the `.env.local` to `.env` and fill the required variables.
+4. `make up` start development server.
+   5Open `localhost:8000` in your browser.
 
 ### Useful commands
 
@@ -64,6 +65,11 @@ Firstly we need to configure pre-commit hooks, we need to do this just one time.
 
 ## Tools
 
-- Postman Collection
+- [Postman Collection Link](https://collectives-pro.postman.co/workspace/collectives-api~8fee08f2-f4e0-43f9-a60d-6dbffe3f54f0/collection/7561664-6eb706a0-83d1-43f5-ac6c-a85ce2c00210?action=share&creator=7561664&active-environment=7561664-af6ab1ce-cf25-4f93-8144-9871781b7ee1)
+- [Postmand Docs](https://documenter.getpostman.com/view/7561664/2sA2xh4Dnw)
 
+## Deployment
+
+This project was deployed in Digital Ocean using docker-compose and a nginx reverse proxy in
+a Ubuntu 22.04 droplet in the domain https://places.codemia.dev.
 

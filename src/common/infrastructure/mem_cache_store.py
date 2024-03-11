@@ -8,10 +8,10 @@ from src.common.domain.interfaces.cache_store import CacheStore
 
 @dataclass
 class MemCacheStore(CacheStore):
-    cache: TTLCache
+    instance: TTLCache
 
     def save(self, key: str, value: str):
-        self.cache[key] = value
+        self.instance[key] = value
 
     def get(self, key: str) -> Optional[str]:
-        return self.cache.get(key)
+        return self.instance.get(key)

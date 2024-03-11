@@ -52,6 +52,7 @@ reports/flake8/*
 # Config files
 .env
 .env.prod
+
  # required to test production images only
 .aws_credentials
 config/settings/local.py

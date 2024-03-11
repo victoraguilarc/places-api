@@ -9,7 +9,7 @@ from src.auth.infrastructure.repositories.orm_session_user import ORMSessionUser
 from src.common.domain.context.domain import DomainContext
 from src.common.helpers.singlenton import SingletonMeta
 from src.common.infrastructure.mem_cache_store import MemCacheStore
-from src.places.infrastructure.services.http_forecast import CachedHttpForecastService
+from src.places.infrastructure.services.http_cached_forecast import HttpCachedForecastService
 from src.places.infrastructure.services.http_place import HttpPlaceService
 
 
@@ -21,11 +21,11 @@ class DomainSingleton(metaclass=SingletonMeta):
         place_service=HttpPlaceService(
             base_url=settings.RESERVAMOS_BASE_URL,
         ),
-        forecast_service=CachedHttpForecastService(
+        forecast_service=HttpCachedForecastService(
             base_url=settings.OPEN_WEATHER_BASE_URL,
             api_key=settings.OPEN_WEATHER_API_KEY,
             cache_store=MemCacheStore(
-                cache=TTLCache(maxsize=1000, ttl=3600),
+                instance=TTLCache(maxsize=1000, ttl=3600),
             ),
         ),
     )

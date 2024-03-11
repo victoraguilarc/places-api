@@ -5,6 +5,7 @@ import requests
 
 from src.common.constants import DEFAULT_REQUEST_TIMEOUT
 from src.places.domain.entities.place import Place, PlaceType
+from src.places.domain.exceptions import FetchPlacesError
 from src.places.domain.services.place import PlaceService
 
 
@@ -19,7 +20,7 @@ class HttpPlaceService(PlaceService):
         }
         response = requests.get(endpoint, headers=headers, timeout=DEFAULT_REQUEST_TIMEOUT)
         if response.status_code not in [200, 201]:
-            raise Exception('Error getting places')
+            raise FetchPlacesError
         response_json = response.json()
         return [
             Place(

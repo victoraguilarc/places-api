@@ -50,7 +50,7 @@ loaddata:
 
 fixtures:
 	@echo "Loading fixtures..."
-	$(COMPOSE) run --rm django python manage.py loaddata api_keys phone_numbers email_addresses users linked_sites tenants tenant_customers tenant_users tenant_classes tenant_class_schedules payment_products payment_prices payment_accounts payment_methods
+	$(COMPOSE) run --rm django python manage.py loaddata phone_numbers email_addresses users
 
 dumpdata:
 	@echo "Getting fixtures..."

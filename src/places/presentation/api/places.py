@@ -5,7 +5,7 @@ from rest_framework.response import Response
 
 from src.common.presentation.api.domain_api import DomainAPIView
 from src.places.application.responses import PlaceContainersResponse
-from src.places.application.use_cases import PlaceContainersFilterer
+from src.places.application.use_cases.places_filterer import PlaceContainersFilterer
 
 
 class PlacesView(DomainAPIView):

@@ -21,7 +21,7 @@ jobs:
           --health-timeout 5s
           --health-retries 5
       postgres:
-        image: postgres:15-buster
+        image: postgres:14
         env:
           POSTGRES_HOST: 'postgres'
           POSTGRES_DB: 'postgres'

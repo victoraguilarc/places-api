@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: python:3.10-slim-buster
+      image: python:3.11-slim-buster
       volumes:
         - /cache/pip:/github/home/.cache/pip
 
@@ -21,7 +21,7 @@ jobs:
           --health-timeout 5s
           --health-retries 5
       postgres:
-        image: postgres:12-buster
+        image: postgres:15-buster
         env:
           POSTGRES_HOST: 'postgres'
           POSTGRES_DB: 'postgres'
@@ -78,8 +78,8 @@ jobs:
       - name: Linting
         run: |
           poetry run isort .
-          poetry black --config=pyproject.toml .
-          run --rm --no-deps django ruff check .
+          poetry run black --config=pyproject.toml .
+          poetry run black ruff check .
 
       - name: Testing
         env:

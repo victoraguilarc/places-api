@@ -79,7 +79,7 @@ jobs:
         run: |
           poetry run isort .
           poetry run black --config=pyproject.toml .
-          poetry run black ruff check .
+          poetry run ruff check .
 
       - name: Testing
         env:
